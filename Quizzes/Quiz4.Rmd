@@ -1,0 +1,175 @@
+---
+title: "R Programming Quiz 4"
+author: "Francisco Martín"
+date: "September, 2018"
+output: html_document
+---
+
+## 1.-
+
+What is produced at the end of this snippet of R code? `set.seed(1); rpois(5, 2)` 
+
+
+- A vector with the numbers 1, 1, 2, 4, 1  (Correct)
+
+- A vector with the numbers 3.3, 2.5, 0.5, 1.1, 1.7
+
+- A vector with the numbers 1, 4, 1, 1, 5
+
+- It is impossible to tell because the result is random
+
+Solution ->
+``` {r prove_1}
+set.seed(1); rpois(5, 2)
+```
+
+
+## 2.-
+
+What R function can be used to generate standard Normal random variables?
+
+- rnorm
+
+- dnorm
+
+- pnorm
+
+- qnorm
+
+Solution -> Theory. r in name means random variable creation.
+
+
+## 3.-
+
+When simulating data, why is using the set.seed() function important? Select all that apply.
+
+- It ensures that the random numbers generated are within specified boundaries.
+
+- It can be used to generate non-uniform random numbers.
+
+- It ensures that the sequence of random numbers is truly random.
+
+- It can be used to specify which random number generating algorithm R should use, ensuring consistency and reproducibility.  (Correct)
+
+Solution -> Random numbers are not real random. If you set the seed you can reproduce them.
+
+
+## 4.-
+
+Which function can be used to evaluate the inverse cumulative distribution function for the Poisson distribution?
+
+- dpois
+
+- ppois
+
+- qpois  (Correct)
+
+- rpois
+
+Solution -> Theory. q in name means evaluate the quantile.
+
+
+## 5.-
+
+What does the following code do?
+
+``` {r eval=FALSE}
+set.seed(10)
+x <- rep(0:1, each = 5)
+e <- rnorm(10, 0, 20)
+y <- 0.5 + 2 * x + e
+```
+
+- Generate random exponentially distributed data
+
+- Generate data from a Normal linear model  (Correct)
+
+- Generate uniformly distributed random data
+
+- Generate data from a Poisson generalized linear model
+
+Solution -> Code autoexplains.
+
+
+## 6.-
+
+What R function can be used to generate Binomial random variables?
+
+- rbinom  (Correct)
+
+- qbinom
+
+- dbinom
+
+- pbinom
+
+Solution -> Theory. r in name means random variable creation.
+
+
+## 7.-
+
+What aspect of the R runtime does the profiler keep track of when an R expression is evaluated?
+
+- the global environment
+
+- the package search list
+
+- the working directory
+
+- the function call stack  (Correct)
+
+Solution -> Theory
+
+
+## 8.-
+
+Consider the following R code
+
+``` {r eval=FALSE}
+library(datasets)
+Rprof()
+fit <- lm(y ~ x1 + x2)
+Rprof(NULL)
+```
+
+(Assume that y, x1, and x2 are present in the workspace.) Without running the code, what percentage of the run time is spent in the 'lm' function, based on the 'by.total' method of normalization shown in 'summaryRprof()'?
+
+- 100%  (Correct)
+
+- It is not possible to tell
+
+- 23%
+
+- 50%
+
+Solution ->  This is the only function on the code, it will expend 100% of the time.
+
+
+## 9.-
+
+When using 'system.time()', what is the user time?
+
+- It is a measure of network latency
+
+- It is the time spent by the CPU evaluating an expression  (Correct)
+
+- It is the "wall-clock" time it takes to evaluate an expression
+
+- It is the time spent by the CPU waiting for other tasks to finish
+
+Solution -> Theory.
+
+
+## 10.-
+
+If a computer has more than one available processor and R is able to take advantage of that, then which of the following is true when using 'system.time()'?
+
+- user time is 0
+
+- elapsed time is 0
+
+- user time is always smaller than elapsed time
+
+- elapsed time may be smaller than user time   (Correct)
+
+Solution -> Theory
